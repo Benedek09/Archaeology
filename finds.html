@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finds - Woodford Saxon Ford</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: white;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #80004c; /* similar to magenta header color */
+    }
+
+    .find {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      margin-bottom: 30px;
+      align-items: flex-start;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+    }
+
+    .find img {
+      width: 200px;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    .info h3 {
+      margin-top: 0;
+      color: #80004c;
+    }
+
+    .info p {
+      margin-top: 5px;
+      color: #444;
+    }
+
+    @media (max-width: 700px) {
+      .find {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .find img {
+        margin-bottom: 10px;
+      }
+
+      .info {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Finds from the Excavation</h1>
+
+  <div class="find">
+    <img src="https://example.com/image1.jpg" alt="Brooch">
+    <div class="info">
+      <h3>Brooch</h3>
+      <p>A beautiful brooch featuring acorns in the design, with an unknown exact origin. Possibly Saxon or early Medieval.</p>
+    </div>
+  </div>
+
+  <div class="find">
+    <img src="https://example.com/image2.jpg" alt="Copper Fragments">
+    <div class="info">
+      <h3>Copper</h3>
+      <p>Ornately decorated copper fragments, likely of Victorian origin, found deeper in the trench.</p>
+    </div>
+  </div>
+
+  <div class="find">
+    <img src="https://example.com/image3.jpg" alt="Iron Knife Blade">
+    <div class="info">
+      <h3>Iron Knife Blade</h3>
+      <p>This corroded blade may have been used as a tool or weapon, estimated to be nearly 1000 years old.</p>
+    </div>
+  </div>
+
+</body>
+</html>
