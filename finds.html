@@ -1,101 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Finds - Woodford Saxon Ford</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Merriweather&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Finds</title>
+  <link rel="stylesheet" href="lightbox/lightbox.css">
+  <script src="lightbox/lightbox-plus-jquery.js"></script>
 
   <style>
     body {
       font-family: 'Merriweather', serif;
-      background-color: white;
-      color: #333;
-      margin: 0;
-      padding: 20px;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 11px;
+      font-size: 11pt;
+      line-height: 1.5;
+      background-color: #f9f9f9;
+      margin: 20px;
     }
 
-    h1 {
-      text-align: center;
-      color: #80004c;
+    h2 {
       font-family: 'PT Sans', sans-serif;
+      font-size: 19pt;
+      color: #333;
+      margin-bottom: 10px;
     }
 
     .find {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-      margin-bottom: 30px;
-      align-items: flex-start;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 20px;
-    }
-
-    .find img {
-      width: 200px;
-      height: auto;
+      margin-bottom: 40px;
+      background: #fff;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      padding: 15px;
+      border-radius: 10px;
     }
 
-    .info {
-      flex: 1;
-    }
-
-    .info h3 {
-      margin-top: 0;
-      color: #80004c;
-      font-family: 'PT Sans', sans-serif;
-      font-size: 19px;
-    }
-
-    .info p {
-      margin-top: 5px;
-      color: #444;
-      font-family: 'Merriweather', serif;
-      font-size: 11px;
-    }
-
-    @media (max-width: 700px) {
-      .find {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .find img {
-        margin-bottom: 10px;
-      }
-
-      .info {
-        text-align: center;
-      }
+    .thumbnails img {
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 150px;
+      height: auto;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <h1>Finds from the Excavation</h1>
-
   <div class="find">
-    <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ09_STACK.jpg" alt="Brooch">
-    <div class="info">
-      <h3>Decorated Brooch</h3>
-      <p>A small decorated brooch from the ford, displaying acorns on the face.</p>
+    <h2>AJ09 Stack</h2>
+    <div class="thumbnails">
+      <a href="images/AJ09_STACK_1.jpg" data-lightbox="aj09" data-title="Front View">
+        <img src="images/AJ09_STACK_1.jpg" alt="AJ09 Stack - Front">
+      </a>
+      <a href="images/AJ09_STACK_2.jpg" data-lightbox="aj09" data-title="Side View">
+        <img src="images/AJ09_STACK_2.jpg" alt="AJ09 Stack - Side">
+      </a>
+      <!-- Add more images like this -->
     </div>
-  </div>
-
-  <div class="find">
-    <img src="images/copper.jpg" alt="Copper Fragments">
-    <div class="info">
-      <h3>Copper Fragments</h3>
-      <p>Ornately decorated copper fragments, likely from the Victorian period, found deeper in the trench with corrosion layers intact.</p>
-    </div>
+    <p>This artifact, labelled AJ09 Stack, was discovered during the 2025 excavation. It is believed to be part of a domestic assemblage, possibly dating back to the Roman period.</p>
   </div>
 
 </body>
