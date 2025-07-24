@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The gallery</title>
+  <title>The Gallery</title>
+  
+  <!-- Lightbox -->
   <link rel="stylesheet" href="lightbox/lightbox.css">
   <script src="lightbox/lightbox-plus-jquery.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=PT+Sans&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -12,7 +17,33 @@
       font-size: 11pt;
       line-height: 1.5;
       background-color: #f9f9f9;
-      margin: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header styling */
+    .header {
+      background-image: url('https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/header.jpg'); /* Replace with your actual header image URL */
+      background-size: cover;
+      background-position: center;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .header h1 {
+      font-family: 'PT Sans', sans-serif;
+      font-size: 36px;
+      margin: 0;
+    }
+
+    .content {
+      padding: 30px 20px;
     }
 
     h2 {
@@ -42,17 +73,25 @@
 </head>
 <body>
 
-  <div class="find">
-    <h2>Copper Fragments</h2>
-    <div class="thumbnails">
-      <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_1.jpg" data-lightbox="AJ05" data-title="Front View">
-        <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_1.jpg" alt="AJ05 - Front">
-      </a>
-      <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_2.jpg" data-lightbox="AJ05" data-title="Back View"></a>
-      <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_3.jpg" data-lightbox="AJ05" data-title="Front Light View"></a>
-      <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_4.jpg" data-lightbox="AJ05" data-title="Back Light View"></a>
+  <!-- Page Header -->
+  <div class="header">
+    <h1>Finds from the 2025 Woodford Halse Excavation</h1>
+  </div>
+
+  <!-- Page Content -->
+  <div class="content">
+    <div class="find">
+      <h2>Copper Fragments</h2>
+      <div class="thumbnails">
+        <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_1.jpg" data-lightbox="AJ05" data-title="Front View">
+          <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_1.jpg" alt="AJ05 - Front">
+        </a>
+        <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_2.jpg" data-lightbox="AJ05" data-title="Back View"></a>
+        <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_3.jpg" data-lightbox="AJ05" data-title="Front Light View"></a>
+        <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_4.jpg" data-lightbox="AJ05" data-title="Back Light View"></a>
+      </div>
+      <p>AJ05 shows a collection of ornately decorated copper fragments which likely originate from the Victorian period.</p>
     </div>
-    <p>AJ05 shows a collection of ornately decorated copper fragments which likely originate from the victorian period.</p>
   </div>
 
 </body>
