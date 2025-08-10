@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>The Gallery</title>
-  
+
   <!-- Lightbox -->
   <link rel="stylesheet" href="lightbox/lightbox.css">
   <script src="lightbox/lightbox-plus-jquery.js"></script>
@@ -23,7 +23,7 @@
 
     /* Header styling */
     .header {
-      background-image: url('https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/header.jpg'); 
+      background-image: url('https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/header.jpg');
       background-size: cover;
       background-position: center;
       height: 275px;
@@ -62,10 +62,14 @@
     }
 
     .find {
+      display: flex;
+      margin: auto;
       margin-bottom: 40px;
       background: #fff;
       border: 1px solid #ccc;
       padding: 15px;
+      width: 80%;
+      height: 220px;
       border-radius: 10px;
     }
 
@@ -73,9 +77,47 @@
       margin: 5px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      width: 150px;
+      width: 300px;
       height: auto;
       cursor: pointer;
+    }
+
+    /* Dropdown button styling */
+    .dropdown-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #7f1146;
+      color: #ccc;
+      padding: 40px 60px;
+      cursor: pointer;
+      border: none;
+      width: 80%;
+      font-size: 24px;
+      font-family: 'Merriweather', serif;
+      border-radius: 5px;
+      margin: 20px auto;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown-btn:hover {
+      background-color: #ddd;
+      color: #7f1146;
+    }
+
+    /* Chevron rotation */
+    .chevron {
+      transition: transform 0.3s;
+    }
+
+    .chevron.rotate {
+      transform: rotate(180deg);
+    }
+
+    /* Hidden content container */
+    .dropdown-content {
+      display: none;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -86,10 +128,15 @@
     <h1>The gallery</h1>
   </div>
 
-  <h3>NARC finds</h3>
+  <!-- Dropdown Button -->
+  <button class="dropdown-btn" onclick="toggleDropdown()">
+    NARC finds
+    <span class="chevron">&#9660;</span> <!-- ▼ Unicode arrow -->
+  </button>
 
-  <!-- Page Content -->
-  <div class="content">
+  <!-- Page Content inside dropdown -->
+  <div id="dropdown-content" class="dropdown-content content">
+    <!-- ALL your .find divs go here -->
     <div class="find">
       <h2>Copper Fragments</h2>
       <div class="thumbnails">
@@ -112,7 +159,7 @@
         <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ09/AJ09_2.jpg" data-lightbox="AJ09" data-title="Back View"></a>
         <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ09/AJ09_3.jpg" data-lightbox="AJ09" data-title="Front Zoom View"></a>
       </div>
-      <p>This is a beautiful brooch or badge, that features acorns in the design. The object looks as if it is iron - possibly cast - and is definitley metallic but worn.</p>
+      <p>This is a beautiful brooch or badge, that features acorns in the design. The object looks as if it is iron - possibly cast - and is definitely metallic but worn.</p>
       <p>This pin was likely worn on clothes and could date as far back as the roman or saxon period, as brooches were a popular item of self adornment then.</p>
     </div>
     <div class="find">
@@ -125,8 +172,8 @@
         <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ11/AJ11_3.jpg" data-lightbox="AJ11" data-title="Front Light View"></a>
         <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ11/AJ11_4.jpg" data-lightbox="AJ11" data-title="Back Light View"></a>
       </div>
-      <p>This is a damged musket ball. It is of a traditional spherical shape, used in smoothbore muskets from their emergence in the early 16th century all the way to the mid-19th century when muskets became obsolete.</p>
-      <p>However, later versions of the musket often used various other ammunition such as Minié balls that were of a conical shape - which is superioir for aerodynamics - so this ball is likley from an older model.</p>
+      <p>This is a damaged musket ball. It is of a traditional spherical shape, used in smoothbore muskets from their emergence in the early 16th century all the way to the mid-19th century when muskets became obsolete.</p>
+      <p>However, later versions of the musket often used various other ammunition such as Minié balls that were of a conical shape - which is superior for aerodynamics - so this ball is likely from an older model.</p>
     </div>
     <div class="find">
       <h2>Bullet Casings</h2>
@@ -152,8 +199,8 @@
         <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG03/DG03_3.jpg" data-lightbox="DG03" data-title="Front Light View"></a>
         <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG03/DG03_4.jpg" data-lightbox="DG03" data-title="Back Light View"></a>
       </div>
-      <p>This coin, minted in 1797, features King George III. The name 'cartwheel penny' is because of the coin's large size and resembelance to a cartwheel. It was created alongside the cartwheel twopence.</p>
-      <p>Designed by German engraver Kuchler, they were minted by Matthew Boulton in his private Soho Mint in Birmingham. It is believed 40,000,000 of the 1797 penny were minted so it is quite common.</p>
+      <p>This coin, minted in 1797, features King George III. The name 'cartwheel penny' is because of the coin's large size and resemblance to a cartwheel. It was created alongside the cartwheel twopence.</p>
+      <p>Designed by German engraver Kuchler, they were minted by Matthew Boulton in his private Soho Mint in Birmingham. It is believed 40,000,000 of the 1797 penny were minted, so it is quite common.</p>
     </div>
     <div class="find">
       <h2>George Vth Penny</h2>
@@ -166,7 +213,7 @@
         <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG10/DG10_4.jpg" data-lightbox="DG10" data-title="DG10 - Front Close Up Light View"></a>
         <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG10/DG10_5.jpg" data-lightbox="DG10" data-title="DG10 - Back Light View"></a>
       </div>
-      <p>Minted in 1918, this penny is in quite good condition. Looking at the Britannia on the front, it appears there is no initial underneathe the shield, indicating this was a Royal Mint penny.</p>
+      <p>Minted in 1918, this penny is in quite good condition. Looking at the Britannia on the front, it appears there is no initial underneath the shield, indicating this was a Royal Mint penny.</p>
       <p>Because this coin was minted in the war, some examples of it were not from the Royal Mint, bearing a 'KN' under the shield for Kings Norton Mint or more rarely 'H' for Heaton Mint.</p>
     </div>
     <div class="find">
@@ -182,6 +229,24 @@
       <p>This particular medal is a 33mm piece from 1919, featuring a warrior presenting a sword to an angle on one side and the inscription 'To commemorate the victorious conclusion of the Great War' on the other.</p>
     </div>
   </div>
+
+  <script>
+    function toggleDropdown() {
+      const content = document.getElementById("dropdown-content");
+      const chevron = document.querySelector(".chevron");
+
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        chevron.classList.remove("rotate");
+      } else {
+        content.style.display = "block";
+        chevron.classList.add("rotate");
+      }
+    }
+  </script>
+
+</body>
+</html>
 
 </body>
 </html>
