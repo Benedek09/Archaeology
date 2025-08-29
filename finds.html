@@ -145,10 +145,52 @@
     }
 
 
-    @media (max-width: 768px) {
+        @media (max-width: 768px) {
       .dropdown-box {
         grid-template-columns: 1fr; /* single column */
         width: 95%; /* a bit wider for small screens */
+      }
+
+      body {
+        font-size: 13pt; /* bump base font size for readability */
+        line-height: 1.6;
+      }
+
+      .header {
+        height: 180px; /* smaller header image for mobile */
+        padding: 10px;
+      }
+
+      .header h1 {
+        font-size: 36px; /* scale down heading */
+      }
+
+      h2 {
+        font-size: 14pt; /* slightly larger subheadings */
+      }
+
+      h3 {
+        font-size: 17pt;
+      }
+
+      .text-block {
+        padding: 20px; /* less padding so it fits */
+      }
+
+      .dropdown-btn {
+        padding: 20px; /* reduce padding for easier fit */
+        font-size: 18px; /* more comfortable on mobile */
+        width: 95%;
+      }
+
+      .thumbnails img {
+        width: 100%; /* make images responsive */
+        max-width: 100%;
+        height: auto;
+      }
+
+      .find {
+        padding: 10px; /* tighter padding inside boxes */
       }
     }
   </style>
