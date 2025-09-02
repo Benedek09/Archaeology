@@ -208,13 +208,13 @@
   </div>
 
   <!-- Dropdown Button -->
-  <button class="dropdown-btn" onclick="toggleDropdown()">
+  <button class="dropdown-btn" onclick="toggleDropdown('dropdown1', 'chevron1')"">
     Northamptonshire Artifact Recovery Club (NARC) finds
-    <span class="chevron">&#9660;</span> <!-- ▼ Unicode arrow -->
+    <span id="chevron1" class="chevron">&#9660;</span>
   </button>
 
   <!-- Page Content inside dropdown -->
-  <div id="dropdown-content" class="dropdown-content content">
+  <div id="dropdown1" class="dropdown-content content">
     <div class="dropdown-box">
 
       <div class="text-block">
@@ -423,13 +423,12 @@
     </div>
   </div>
 
-   <button class="dropdown-btn" onclick="toggleDropdown()">
+   <button class="dropdown-btn" onclick="toggleDropdown('dropdown2', 'chevron2')"">
     Dig Weekend finds
-    <span class="chevron">&#9660;</span> <!-- ▼ Unicode arrow -->
+    <span id="chevron2" class="chevron">&#9660;</span>
   </button>
 
-  <!-- Page Content inside dropdown -->
-  <div id="dropdown-content" class="dropdown-content content">
+  <div id="dropdown2" class="dropdown-content content">
     <div class="dropdown-box">
 
       <div class="text-block">
@@ -446,14 +445,15 @@
   </div>
 
   <script>
-    function toggleDropdown() {
-      const content = document.getElementById("dropdown-content");
-      const chevron = document.querySelector(".chevron");
+      function toggleDropdown(contentId, chevronId) {
+        const content = document.getElementById(contentId);
+        const chevron = document.getElementById(chevronId);
+    
+        content.classList.toggle("open");
+        chevron.classList.toggle("rotate");
+      }
+    </script>
 
-      content.classList.toggle("open");
-      chevron.classList.toggle("rotate");
-    }
-  </script>
 
 </body>
 </html>
