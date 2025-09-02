@@ -99,50 +99,68 @@
     }
 
 
-    /* Dropdown button styling */
+    /* Base dropdown button (big ones) */
     .dropdown-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #7f1146;
-      color: #ccc;
-      padding: 40px 60px;
-      cursor: pointer;
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 18px;
+      text-align: left;
       border: none;
-      width: 80%;
-      font-size: 24px;
-      font-family: 'Merriweather', serif;
-      border-radius: 5px;
-      margin: 20px auto;
-      transition: background-color 0.2s;
+      background-color: #eee;
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
     }
-
+    
     .dropdown-btn:hover {
       background-color: #ddd;
-      color: #7f1146;
     }
-
+    
+    /* Sub-dropdown button */
+    .sub-dropdown-btn {
+      width: 90%;              /* smaller width */
+      margin-left: 5%;          /* indentation */
+      padding: 8px 16px;        /* less height */
+      font-size: 16px;          /* slightly smaller font */
+      background-color: #f8f8f8;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 6px;
+      margin-top: 6px;
+      transition: background 0.3s;
+    }
+    
+    .sub-dropdown-btn:hover {
+      background-color: #e9e9e9;
+    }
+    
+    /* Dropdown content (both big & small) */
+    .dropdown-content {
+      display: none;
+      overflow: hidden;
+      padding: 0 10px;
+    }
+    
+    .dropdown-content.open {
+      display: block;
+    }
+    
     /* Chevron rotation */
     .chevron {
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
-
+    
     .chevron.rotate {
       transform: rotate(180deg);
     }
 
-    /* Hidden content container */
-    .dropdown-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease, padding 0.5s ease;
-      padding: 0; /* no padding when closed */
-    }
-
-    .dropdown-content.open {
-      max-height: 5000px; /* big enough to fit all */
-      padding: 20px;      /* restore padding when open */
-    }
 
 
         @media (max-width: 768px) {
@@ -215,8 +233,8 @@
 
   <div id="dropdown1" class="dropdown-content content">
     
-    <button class="dropdown-btn" onclick="toggleDropdown('sub1', 'chevron-sub1')">
-      Found in 5 Scrivens field
+    <button class="sub-dropdown-btn" onclick="toggleDropdown('sub1', 'chevron-sub1')">
+      5 Scrivens
       <span id="chevron-sub1" class="chevron">&#9660;</span>
     </button>
     <div id="sub1" class="dropdown-content">
@@ -326,9 +344,11 @@
         </div>
         <p>This is a button that is likely from military uniform from the Gerogian Period, featuring a Tudor Crown (or King's Crown) that is commonly associated with George III.</p>
       </div>
+    </div>
+  </div>
 
-      <button class="dropdown-btn" onclick="toggleDropdown('sub2', 'chevron-sub2')">
-        Found in 5 School Street field
+      <button class="sub-dropdown-btn" onclick="toggleDropdown('sub2', 'chevron-sub2')">
+        5 School Street
         <span id="chevron-sub2" class="chevron">&#9660;</span>
       </button>
       <div id="sub2" class="dropdown-content">
@@ -436,8 +456,8 @@
     
     <div class="dropdown-box">
 
-      <button class="dropdown-btn" onclick="toggleDropdown('sub3', 'chevron-sub3')">
-        Found in Pit 1
+      <button class="sub-dropdown-btn" onclick="toggleDropdown('sub3', 'chevron-sub3')">
+        Pit 1
         <span id="chevron-sub3" class="chevron">&#9660;</span>
       </button>
       <div id="sub3" class="dropdown-content">
@@ -446,7 +466,7 @@
         </div>
       </div>
 
-      <button class="dropdown-btn" onclick="toggleDropdown('sub4', 'chevron-sub4')">
+      <button class="sub-dropdown-btn" onclick="toggleDropdown('sub4', 'chevron-sub4')">
         Pit 2
         <span id="chevron-sub4" class="chevron">&#9660;</span>
       </button>
@@ -456,7 +476,7 @@
         </div>
       </div>
 
-      <button class="dropdown-btn" onclick="toggleDropdown('sub5', 'chevron-sub5')">
+      <button class="sub-dropdown-btn" onclick="toggleDropdown('sub5', 'chevron-sub5')">
         Pit 3
         <span id="chevron-sub5" class="chevron">&#9660;</span>
       </button>
