@@ -109,7 +109,7 @@
       background-color: #7f1146;
       cursor: pointer;
       outline: none;
-      display: flex;
+      display: block;
       justify-content: space-between;
       align-items: center;
       transition: background 0.3s;
@@ -132,7 +132,7 @@
       border: none;
       cursor: pointer;
       text-align: left;
-      display: flex;
+      display: block;
       justify-content: space-between;
       align-items: center;
       border-radius: 6px;
@@ -167,20 +167,8 @@
       transform: rotate(180deg);
     }
 
-    .dropdown-btn {
-      display: block;
-      margin: 12px auto;
-      width: 80%;           /* main dropdowns take up more space */
-    }
-    
-    .sub-dropdown-btn {
-      display: block;
-      margin: 8px auto;
-      width: 60%;           /* sub-dropdowns narrower */
-    }
 
-
-        @media (max-width: 768px) {
+    @media (max-width: 768px) {
       .dropdown-box {
         grid-template-columns: 1fr; /* single column */
         width: 95%; /* a bit wider for small screens */
