@@ -208,18 +208,20 @@
   </div>
 
   <!-- Dropdown Button -->
-  <button class="dropdown-btn" onclick="toggleDropdown('dropdown1', 'chevron1')"">
+  <button class="dropdown-btn" onclick="toggleDropdown('dropdown1', 'chevron1')">
     Northamptonshire Artifact Recovery Club (NARC) finds
     <span id="chevron1" class="chevron">&#9660;</span>
   </button>
 
-  <!-- Page Content inside dropdown -->
   <div id="dropdown1" class="dropdown-content content">
+    
+    <button class="dropdown-btn" onclick="toggleDropdown('sub1', 'chevron-sub1')">
+      Found in 5 Scrivens field
+      <span id="chevron-sub1" class="chevron">&#9660;</span>
+    </button>
+    <div id="sub1" class="dropdown-content">
+        
     <div class="dropdown-box">
-
-      <div class="text-block">
-        <h3>Found in: 5 Scrivens field</h3>
-      </div>
       
       <div class="find">
         <h2>Copper Fragments</h2>
@@ -324,11 +326,14 @@
         </div>
         <p>This is a button that is likely from military uniform from the Gerogian Period, featuring a Tudor Crown (or King's Crown) that is commonly associated with George III.</p>
       </div>
-      <div></div>
 
-      <div class="text-block">
-        <h3>Found in: 5 School Street field</h3>
-      </div>
+      <button class="dropdown-btn" onclick="toggleDropdown('sub2', 'chevron-sub2')">
+        Found in 5 School Street field
+        <span id="chevron-sub2" class="chevron">&#9660;</span>
+      </button>
+      <div id="sub2" class="dropdown-content">
+
+      <div class="dropdown-box">
       
       <div class="find">
         <h2>Musket Ball</h2>
@@ -427,14 +432,39 @@
     Dig Weekend finds
     <span id="chevron2" class="chevron">&#9660;</span>
   </button>
-
   <div id="dropdown2" class="dropdown-content content">
+    
     <div class="dropdown-box">
 
-      <div class="text-block">
-        <h3>Found in: 5 Scrivens field</h3>
+      <button class="dropdown-btn" onclick="toggleDropdown('sub3', 'chevron-sub3')">
+        Found in Pit 1
+        <span id="chevron-sub3" class="chevron">&#9660;</span>
+      </button>
+      <div id="sub3" class="dropdown-content">
+        <div class="dropdown-box">
+          <!-- Finds for Pit 1 -->
+        </div>
       </div>
-      
+
+      <button class="dropdown-btn" onclick="toggleDropdown('sub4', 'chevron-sub4')">
+        Pit 2
+        <span id="chevron-sub4" class="chevron">&#9660;</span>
+      </button>
+      <div id="sub4" class="dropdown-content">
+        <div class="dropdown-box">
+          <!-- Finds for Pit 2 -->
+        </div>
+      </div>
+
+      <button class="dropdown-btn" onclick="toggleDropdown('sub5', 'chevron-sub5')">
+        Pit 3
+        <span id="chevron-sub5" class="chevron">&#9660;</span>
+      </button>
+      <div id="sub5" class="dropdown-content">
+        <div class="dropdown-box">
+          <!-- Finds for Pit 3 -->
+        </div>
+      </div>
 
     </div>
   </div>
