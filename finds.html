@@ -134,8 +134,7 @@
       border: none;
       cursor: pointer;
       text-align: left;
-      display: block;
-      position: relative;
+      display: flex;
       justify-content: space-between;
       align-items: center;
       border-radius: 6px;
@@ -164,54 +163,15 @@
     }
 
     /* Fix for sub-dropdown content positioning */
-    #sub3 .dropdown-box,
-    #sub4 .dropdown-box,
-    #sub5 .dropdown-box {
+    /* Fix only the sub-dropdown content positioning */
+    #dropdown2 .dropdown-content .dropdown-box {
       width: 100%;
-      margin: 20px auto 0 auto;
-      clear: both;
-    }
-
-    #sub3.dropdown-content,
-    #sub4.dropdown-content,
-    #sub5.dropdown-content {
-      overflow: visible;
-    }
-
-    #sub3.dropdown-content.open,
-    #sub4.dropdown-content.open,
-    #sub5.dropdown-content.open {
-      padding-top: 10px;
-    }
-
-    #sub3.dropdown-content,
-    #sub4.dropdown-content,
-    #sub5.dropdown-content {
-      position: static;
-      width: 100%;
-      display: block;
+      margin: 10px auto 0 auto;
     }
     
-    #sub3.dropdown-content.open,
-    #sub4.dropdown-content.open,
-    #sub5.dropdown-content.open {
-      display: block;
-    }
-
-    #sub3 .dropdown-box,
-    #sub4 .dropdown-box,
-    #sub5 .dropdown-box {
-      display: block;
+    #dropdown2 .dropdown-content {
       width: 100%;
-      margin-top: 20px;
-    }
-    
-    #sub3 .dropdown-box,
-    #sub4 .dropdown-box,
-    #sub5 .dropdown-box {
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      box-sizing: border-box;
     }
         
     /* Chevron rotation */
