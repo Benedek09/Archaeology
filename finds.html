@@ -134,7 +134,8 @@
       border: none;
       cursor: pointer;
       text-align: left;
-      display: flex;
+      display: block;
+      position: relative;
       justify-content: space-between;
       align-items: center;
       border-radius: 6px;
@@ -181,6 +182,36 @@
     #sub4.dropdown-content.open,
     #sub5.dropdown-content.open {
       padding-top: 10px;
+    }
+
+    #sub3.dropdown-content,
+    #sub4.dropdown-content,
+    #sub5.dropdown-content {
+      position: static;
+      width: 100%;
+      display: block;
+    }
+    
+    #sub3.dropdown-content.open,
+    #sub4.dropdown-content.open,
+    #sub5.dropdown-content.open {
+      display: block;
+    }
+
+    #sub3 .dropdown-box,
+    #sub4 .dropdown-box,
+    #sub5 .dropdown-box {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+    }
+    
+    #sub3 .dropdown-box,
+    #sub4 .dropdown-box,
+    #sub5 .dropdown-box {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
         
     /* Chevron rotation */
