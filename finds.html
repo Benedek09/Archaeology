@@ -161,7 +161,28 @@
     .dropdown-content.open {
       display: block;
     }
-    
+
+    /* Fix for sub-dropdown content positioning */
+    #sub3 .dropdown-box,
+    #sub4 .dropdown-box,
+    #sub5 .dropdown-box {
+      width: 100%;
+      margin: 20px auto 0 auto;
+      clear: both;
+    }
+
+    #sub3.dropdown-content,
+    #sub4.dropdown-content,
+    #sub5.dropdown-content {
+      overflow: visible;
+    }
+
+    #sub3.dropdown-content.open,
+    #sub4.dropdown-content.open,
+    #sub5.dropdown-content.open {
+      padding-top: 10px;
+    }
+        
     /* Chevron rotation */
     .chevron {
       transition: transform 0.3s ease;
