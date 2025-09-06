@@ -5,8 +5,8 @@
   <title>The Gallery</title>
 
   <!-- Lightbox -->
-  <link rel="stylesheet" href="lightbox/lightbox.css">
-  <script src="lightbox/lightbox-plus-jquery.js"></script>
+  <link rel="stylesheet" href="https://github.com/Benedek09/Archaeology/tree/main/lightbox/lightbox.css">
+  <script src="https://github.com/Benedek09/Archaeology/tree/main/lightbox/lightbox-plus-jquery.js"></script>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=PT+Sans&display=swap" rel="stylesheet">
@@ -94,8 +94,9 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr); /* 2 columns */
       gap: 20px; /* space between items */
-      width: 80%; /* same width as dropdown button */
-      margin: auto; /* centers the whole box */
+      width: 100%; /* full width of parent */
+      margin: 15px auto; /* centers the whole box */
+      padding: 0 10px; /* add some padding */
     }
 
 
@@ -118,12 +119,12 @@
       font-weight: 550;
       margin: 10px auto;
     }
-    
+
     .dropdown-btn:hover {
       background-color: #ddd;
       color: #7f1146;
     }
-    
+
     /* Sub-dropdown button */
     .sub-dropdown-btn {
       width: 80%;              /* smaller width */
@@ -145,40 +146,39 @@
       font-weight: 550;
       margin: 10px auto;
     }
-    
+
     .sub-dropdown-btn:hover {
       background-color: #e9e9e9;
       color: #7f1146;
     }
-    
+
     /* Dropdown content (both big & small) */
     .dropdown-content {
       display: none;
       overflow: hidden;
       padding: 0 10px;
     }
-    
+
     .dropdown-content.open {
       display: block;
     }
 
-    /* Fix for sub-dropdown content positioning */
-    /* Fix only the sub-dropdown content positioning */
-    #dropdown2 .dropdown-content .dropdown-box {
-      width: 100%;
-      margin: 10px auto 0 auto;
-    }
-    
-    #dropdown2 .dropdown-content {
+    /* Consistent dropdown content styling */
+    .dropdown-content {
       width: 100%;
       box-sizing: border-box;
     }
-        
+    
+    .dropdown-content .dropdown-box {
+      width: 80%;
+      margin: 0 auto;
+    }
+
     /* Chevron rotation */
     .chevron {
       transition: transform 0.3s ease;
     }
-    
+
     .chevron.rotate {
       transform: rotate(180deg);
     }
@@ -243,7 +243,7 @@
 
   <div class="text-block">
     <h3>Welcome</h3>
-    <i>Welcome to the gallery, open the drop down menus to view different finds. Click on the thumbnail image for a find, to view the further pictures of that artifact.</i>
+    <i>Welcome to the gallery, open the drop-down menus to view different finds. Click on the thumbnail image for a find, to view the further pictures of that artifact.</i>
   </div>
 
   <!-- Dropdown Button -->
@@ -253,15 +253,15 @@
   </button>
 
   <div id="dropdown1" class="dropdown-content content">
-    
+
     <button class="sub-dropdown-btn" onclick="toggleDropdown('sub1', 'chevron-sub1')">
       5 Scrivens
       <span id="chevron-sub1" class="chevron">&#9660;</span>
     </button>
     <div id="sub1" class="dropdown-content">
-        
+
     <div class="dropdown-box">
-      
+
       <div class="find">
         <h2>Copper Fragments</h2>
         <div class="thumbnails">
@@ -350,7 +350,7 @@
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/RB06/RB06_3.jpg" data-lightbox="RB06" data-title="RB06 - Front Close Up View"></a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/RB06/RB06_4.jpg" data-lightbox="RB06" data-title="RB06 - Front Close Up Light View"></a>
         </div>
-        <p>This is a barrel key, a type of key featuring a distinctive barrel-like hole, they are used for purposes where it is not necessary to lock something securely but it is needed for something to be turned with a key.
+        <p>This is a barrel key, a type of key featuring a distinctive barrel-like hole, they are used for purposes where it is not necessary to lock something securely, but it is needed for something to be turned with a key.
         The design of this specific key suggests it might have been used to wind something, like a grandfather clock for example.</p>
       </div>
        <div class="find">
@@ -363,7 +363,7 @@
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/RB02/RB02_6.jpg" data-lightbox="RB02" data-title="RB02 - Front Light View"></a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/RB02/RB02_5.jpg" data-lightbox="RB02" data-title="RB02 - Front View + Bullet Casing"></a>
         </div>
-        <p>This is a button that is likely from military uniform from the Gerogian Period, featuring a Tudor Crown (or King's Crown) that is commonly associated with George III.</p>
+        <p>This is a button that is likely from military uniform from the Georgian Period, featuring a Tudor Crown (or King's Crown) that is commonly associated with George III.</p>
       </div>
     </div>
   </div>
@@ -375,7 +375,7 @@
       <div id="sub2" class="dropdown-content">
 
       <div class="dropdown-box">
-      
+
       <div class="find">
         <h2>Musket Ball</h2>
         <div class="thumbnails">
@@ -426,7 +426,7 @@
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG12/DG12_4.jpg" data-lightbox="DG12" data-title="DG12 - Back Light View"></a>
         </div>
         <p>This scallop shaped 'palm guard' is quite unusual, many similar objects are found across the country, often being made of crudely cast lead. Some theorise 'palm guards' are simply puddles of waste lead, as specific uses for them are hard to find.
-        However this specific piece appears to be moulded to fit the fingers of an individual. A potential use for such as item would be pushing steel needles through materials such as leather. It is the first scallop palm guard found in Northamptonshire.</p>
+        However, this specific piece appears to be moulded to fit the fingers of an individual. A potential use for such as item would be pushing steel needles through materials such as leather. It is the first scallop palm guard found in Northamptonshire.</p>
       </div>
       <div class="find">
         <h2>Heart Pendant</h2>
@@ -468,23 +468,25 @@
       </div>
     </div>
   </div>
+  
+  <!-- Close the NARC Finds dropdown -->
   </div>
-
-   <button class="dropdown-btn" onclick="toggleDropdown('dropdown2', 'chevron2')">
+  
+  <!-- Dig Weekend Section -->
+  <button class="dropdown-btn" onclick="toggleDropdown('dropdown2', 'chevron2')">
     Dig Weekend finds
     <span id="chevron2" class="chevron">&#9660;</span>
   </button>
   <div id="dropdown2" class="dropdown-content content">
-    
-    <div class="dropdown-box">
-
+    <!-- Pit 1 -->
+    <div class="sub-dropdown">
       <button class="sub-dropdown-btn" onclick="toggleDropdown('sub3', 'chevron-sub3')">
         Pit 1
         <span id="chevron-sub3" class="chevron">&#9660;</span>
       </button>
-      <div id="sub3" class="dropdown-content">
-        <div class="dropdown-box">
-          <!-- Finds for Pit 1 -->
+    <div id="sub3" class="dropdown-content">
+      <div class="dropdown-box">
+        <!-- Finds for Pit 1 -->
           <div class="find">
             <h2>RAF Button</h2>
             <div class="thumbnails">
@@ -506,7 +508,7 @@
             <p></p>
           </div>
           <div class="find">
-            <h2>Small Childs Toy Tea Cup</h2>
+            <h2>Small Child's Toy Tea Cup</h2>
             <div class="thumbnails">
               <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/T_1.jpg" data-lightbox="T" data-title="Front View">
                 <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/T_1.jpg" alt="T - Front View">
@@ -536,7 +538,7 @@
             <p></p>
           </div>
           <div class="find">
-            <h2>Small Childs Toy Tea Cup</h2>
+            <h2>Small Child's Toy Tea Cup</h2>
             <div class="thumbnails">
               <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Q_1.jpg" data-lightbox="Q" data-title="Front View">
                 <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Q_1.jpg" alt="Q - Front View">
@@ -571,205 +573,205 @@
               <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/U_1.jpg" data-lightbox="U" data-title="Front View">
                 <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/U_1.jpg" alt="U - Front View">
               </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/U_2.jpg" data-lightbox="U" data-title="U - Back View"></a>
             </div>
             <p></p>
           </div>
         </div>
       </div>
+    </div>
 
-      <button class="sub-dropdown-btn" onclick="toggleDropdown('sub4', 'chevron-sub4')">
-        Pit 2
-        <span id="chevron-sub4" class="chevron">&#9660;</span>
-      </button>
-      <div id="sub4" class="dropdown-content">
-        <div class="dropdown-box">
-          <!-- Finds for Pit 2 -->
-          <div class="find">
-            <h2>Pottery Shard</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/B_1.jpg" data-lightbox="B" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/B_1.jpg" alt="B - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/B_2.jpg" data-lightbox="B" data-title="B - Back View"></a>
-            </div>
-            <p></p>
+    <!-- Pit 2 -->
+    <button class="sub-dropdown-btn" onclick="toggleDropdown('sub4', 'chevron-sub4')">
+      Pit 2
+      <span id="chevron-sub4" class="chevron">&#9660;</span>
+    </button>
+    <div id="sub4" class="dropdown-content">
+      <div class="dropdown-box">
+        <!-- Finds for Pit 2 -->
+        <div class="find">
+          <h2>Pottery Shard</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/B_1.jpg" data-lightbox="B" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/B_1.jpg" alt="B - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/B_2.jpg" data-lightbox="B" data-title="B - Back View"></a>
           </div>
-          <div class="find">
-            <h2>Blue Pottery Shard</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/C_1.jpg" data-lightbox="C" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/C_1.jpg" alt="C - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/C_2.jpg" data-lightbox="C" data-title="C - Back View"></a>
-            </div>
-            <p></p>
+          <p></p>
+        </div>
+        <div class="find">
+          <h2>Blue Pottery Shard</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/C_1.jpg" data-lightbox="C" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/C_1.jpg" alt="C - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/C_2.jpg" data-lightbox="C" data-title="C - Back View"></a>
           </div>
-          <div class="find">
-            <h2>Medium Bottle</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/G_1.jpg" data-lightbox="G" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/G_1.jpg" alt="G - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/G_2.jpg" data-lightbox="G" data-title="G - Back View"></a>
-            </div>
-            <p></p>
+          <p></p>
+        </div>
+        <div class="find">
+          <h2>Medium Bottle</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/G_1.jpg" data-lightbox="G" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/G_1.jpg" alt="G - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/G_2.jpg" data-lightbox="G" data-title="G - Back View"></a>
           </div>
-          <div class="find">
-            <h2>Flint Secondary Flake</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/S_1.jpg" data-lightbox="S" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/S_1.jpg" alt="S - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/S_2.jpg" data-lightbox="S" data-title="S - Back View"></a>
-            </div>
-            <p>In the process of napping, flint flakes detach and this flint is likely a by-product of that process. You can identify the worked flakes based upon the pattern of lines and from where the blow was struck to force the flake to split from the tool being created. 
-              These tools stopped being made in the Bronze age around 3000 to 4000 BC. The process of using flints can date anywhere from Mesolithic (10,000 BC or 8,000 BC)  to Neolithic (4000-5000 BC) periods.</p>
+          <p></p>
+        </div>
+        <div class="find">
+          <h2>Flint Secondary Flake</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/S_1.jpg" data-lightbox="S" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/S_1.jpg" alt="S - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/S_2.jpg" data-lightbox="S" data-title="S - Back View"></a>
           </div>
-          <div class="find">
-            <h2>Small Cambridge Lemonade Bottle</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/H_1.jpg" data-lightbox="H" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/H_1.jpg" alt="H - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/H_2.jpg" data-lightbox="H" data-title="H - Back View"></a>
-            </div>
-            <p>These rectangular aqua bottles from Chivers and Sons, Histon, Cambridge, date from the 1910s. By the 1920s they were made in an automatic bottling machine, and so the mould seam of later bottles runs all the way up the side and through the lip, to the top of the bottle.</p>
+          <p>In the process of napping, flint flakes detach and this flint is likely a by-product of that process. You can identify the worked flakes based upon the pattern of lines and from where the blow was struck to force the flake to split from the tool being created.
+            These tools stopped being made in the Bronze age around 3000 to 4000 BC. The process of using flints can date anywhere from Mesolithic (10,000 BC or 8,000 BC)  to Neolithic (4000-5000 BC) periods.</p>
+        </div>
+        <div class="find">
+          <h2>Small Cambridge Lemonade Bottle</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/H_1.jpg" data-lightbox="H" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/H_1.jpg" alt="H - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/H_2.jpg" data-lightbox="H" data-title="H - Back View"></a>
           </div>
-          <div class="find">
-            <h2>Decorated Cup Piece</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/I_1.jpg" data-lightbox="I" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/I_1.jpg" alt="I - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/I_2.jpg" data-lightbox="I" data-title="I - Back View"></a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/I_3.jpg" data-lightbox="I" data-title="I - Back View"></a>
-            </div>
-            <p></p>
+          <p>These rectangular aqua bottles from Chivers and Sons, Histon, Cambridge, date from the 1910s. By the 1920s they were made in an automatic bottling machine, and so the mould seam of later bottles runs all the way up the side and through the lip, to the top of the bottle.</p>
+        </div>
+        <div class="find">
+          <h2>Decorated Cup Piece</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/I_1.jpg" data-lightbox="I" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/I_1.jpg" alt="I - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/I_2.jpg" data-lightbox="I" data-title="I - Back View"></a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/I_3.jpg" data-lightbox="I" data-title="I - Back View"></a>
           </div>
-          <div class="find">
-            <h2>Glass Heinz Bottle</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/K_1.jpg" data-lightbox="K" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/K_1.jpg" alt="K - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/K_2.jpg" data-lightbox="K" data-title="K - Back View"></a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/K_3.jpg" data-lightbox="K" data-title="K - Back View"></a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/K_4.jpg" data-lightbox="K" data-title="K - Back View"></a>
-            </div>
-            <p></p>
+          <p></p>
+        </div>
+        <div class="find">
+          <h2>Glass Heinz Bottle</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/K_1.jpg" data-lightbox="K" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/K_1.jpg" alt="K - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/K_2.jpg" data-lightbox="K" data-title="K - Back View"></a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/K_3.jpg" data-lightbox="K" data-title="K - Back View"></a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/K_4.jpg" data-lightbox="K" data-title="K - Back View"></a>
           </div>
-          <div class="find">
-            <h2>Clear Glass Base</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/L_1.jpg" data-lightbox="L" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/L_1.jpg" alt="L - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/L_2.jpg" data-lightbox="L" data-title="L - Back View"></a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/L_3.jpg" data-lightbox="L" data-title="L - Back View"></a>
-            </div>
-            <p></p>
+          <p></p>
+        </div>
+        <div class="find">
+          <h2>Clear Glass Base</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/L_1.jpg" data-lightbox="L" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/L_1.jpg" alt="L - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/L_2.jpg" data-lightbox="L" data-title="L - Back View"></a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/L_3.jpg" data-lightbox="L" data-title="L - Back View"></a>
           </div>
-          <div class="find">
-            <h2>Green Glass Camp Coffe Bottle</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/J_1.jpg" data-lightbox="J" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/J_1.jpg" alt="J - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/J_2.jpg" data-lightbox="J" data-title="J - Back View"></a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/J_3.jpg" data-lightbox="J" data-title="J - Back View"></a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/J_4.jpg" data-lightbox="J" data-title="J - Back View"></a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/J_5.jpg" data-lightbox="J" data-title="J - Back View"></a>
-            </div>
-            <p>Camp Coffee was created in 1885 by Campbell Paterson (1851–1927) of R. Paterson & Son in Glasgow. The company specialised in cordials, and their best-selling product was a raspberry cordial often added to whisky or brandy to create a drink known as "Cuddle-me-Dearie". 
-              The coffee essence was developed by Campbell Paterson for domestic use, to avoid the complex and then expensive equipment required for coffee drinking.</p>
+          <p></p>
+        </div>
+        <div class="find">
+          <h2>Green Glass Camp Coffe Bottle</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/J_1.jpg" data-lightbox="J" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/J_1.jpg" alt="J - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/J_2.jpg" data-lightbox="J" data-title="J - Back View"></a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/J_3.jpg" data-lightbox="J" data-title="J - Back View"></a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/J_4.jpg" data-lightbox="J" data-title="J - Back View"></a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/J_5.jpg" data-lightbox="J" data-title="J - Back View"></a>
           </div>
-          <div class="find">
-            <h2>Johnson & Jorgenson Bottle</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Y_1.jpg" data-lightbox="Y" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Y_1.jpg" alt="Y - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Y_2.jpg" data-lightbox="Y" data-title="Y - Back View"></a>
-            </div>
-            <p></p>
+          <p>Camp Coffee was created in 1885 by Campbell Paterson (1851–1927) of R. Paterson & Son in Glasgow. The company specialised in cordials, and their best-selling product was a raspberry cordial often added to whisky or brandy to create a drink known as "Cuddle-me-Dearie".
+            The coffee essence was developed by Campbell Paterson for domestic use, to avoid the complex and then expensive equipment required for coffee drinking.</p>
+        </div>
+        <div class="find">
+          <h2>Johnson & Jorgenson Bottle</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Y_1.jpg" data-lightbox="Y" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Y_1.jpg" alt="Y - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Y_2.jpg" data-lightbox="Y" data-title="Y - Back View"></a>
           </div>
-          <div class="find">
-            <h2>W&A Gilbey Bottle Base</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Z_1.jpg" data-lightbox="Z" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Z_1.jpg" alt="Z - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Z_2.jpg" data-lightbox="Z" data-title="Z - Back View"></a>
-            </div>
-            <p>W&A Gilbey was founded in 1857 as a gin distillery by Sir Walter Gilbey. This bottle bottom is likely to be a gin bottle but with such a small fragment it is undatable.</p>
+          <p></p>
+        </div>
+        <div class="find">
+          <h2>W&A Gilbey Bottle Base</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Z_1.jpg" data-lightbox="Z" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Z_1.jpg" alt="Z - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/Z_2.jpg" data-lightbox="Z" data-title="Z - Back View"></a>
           </div>
-          <div class="find">
-            <h2>Asiatic Pheasant China Plate Pieces</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/X_1.jpg" data-lightbox="X" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/X_1.jpg" alt="X - Front View">
-              </a>
-            </div>
-            <p>Featuring elegant birds and beautiful florals, the Blue Asiatic Pheasants collection launched in 1862 and is one of the most iconic and versatile patterns. These designs were very popular and used by many pottery companies.
-            Possibly Burleigh or Challiner from between late 19th century and early 20th.</p>
+          <p>W&A Gilbey was founded in 1857 as a gin distillery by Sir Walter Gilbey. This bottle bottom is likely to be a gin bottle but with such a small fragment it is hard to date the object exactly.</p>
+        </div>
+        <div class="find">
+          <h2>Asiatic Pheasant China Plate Pieces</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/X_1.jpg" data-lightbox="X" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/X_1.jpg" alt="X - Front View">
+            </a>
           </div>
-          <div class="find">
-            <h2>Flint Secondary Flake</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/R_1.jpg" data-lightbox="R" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/R_1.jpg" alt="R - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/R_2.jpg" data-lightbox="R" data-title="R - Back View"></a>
-            </div>
-            <p>In the process of napping, flint flakes detach and this flint is likely a by-product of that process. You can identify the worked flakes based upon the pattern of lines and from where the blow was struck to force the flake to split from the tool being created. 
-              These tools stopped being made in the Bronze age around 3000 to 4000 BC. The process of using flints can date anywhere from Mesolithic (10,000 BC or 8,000 BC)  to Neolithic (4000-5000 BC) periods.</p>
+          <p>Featuring elegant birds and beautiful florals, the Blue Asiatic Pheasants collection launched in 1862 and is one of the most iconic and versatile patterns. These designs were very popular and used by many pottery companies.
+          Possibly Burleigh or Challiner from between late 19th century and early 20th.</p>
+        </div>
+        <div class="find">
+          <h2>Flint Secondary Flake</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/R_1.jpg" data-lightbox="R" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/R_1.jpg" alt="R - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/R_2.jpg" data-lightbox="R" data-title="R - Back View"></a>
           </div>
+          <p>In the process of napping, flint flakes detach and this flint is likely a by-product of that process. You can identify the worked flakes based upon the pattern of lines and from where the blow was struck to force the flake to split from the tool being created.
+            These tools stopped being made in the Bronze age around 3000 to 4000 BC. The process of using flints can date anywhere from Mesolithic (10,000 BC or 8,000 BC)  to Neolithic (4000-5000 BC) periods.</p>
         </div>
       </div>
+    </div>
 
-      <button class="sub-dropdown-btn" onclick="toggleDropdown('sub5', 'chevron-sub5')">
-        Pit 3
-        <span id="chevron-sub5" class="chevron">&#9660;</span>
-      </button>
-      <div id="sub5" class="dropdown-content">
-        <div class="dropdown-box">
-          <!-- Finds for Pit 3 -->
-          <div class="find">
-            <h2>Small Bottle</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/F_1.jpg" data-lightbox="F" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/F_1.jpg" alt="F - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/F_2.jpg" data-lightbox="F" data-title="F - Back View"></a>
-            </div>
-            <p></p>
+    <!-- Pit 3 -->
+    <button class="sub-dropdown-btn" onclick="toggleDropdown('sub5', 'chevron-sub5')">
+      Pit 3
+      <span id="chevron-sub5" class="chevron">&#9660;</span>
+    </button>
+    <div id="sub5" class="dropdown-content">
+      <div class="dropdown-box">
+        <!-- Finds for Pit 3 -->
+        <div class="find">
+          <h2>Small Bottle</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/F_1.jpg" data-lightbox="F" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/F_1.jpg" alt="F - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/F_2.jpg" data-lightbox="F" data-title="F - Back View"></a>
           </div>
-          <div class="find">
-            <h2>Ceramic Marble</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/E_1.jpg" data-lightbox="E" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/E_1.jpg" alt="E - Front View">
-              </a>
-            </div>
-            <p></p>
+          <p></p>
+        </div>
+        <div class="find">
+          <h2>Ceramic Marble</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/E_1.jpg" data-lightbox="E" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/E_1.jpg" alt="E - Front View">
+            </a>
           </div>
-          <div class="find">
-            <h2>Gryphaea Shell (Devil's Toenail)</h2>
-            <div class="thumbnails">
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/AA_1.jpg" data-lightbox="AA" data-title="Front View">
-                <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/AA_1.jpg" alt="AA - Front View">
-              </a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/AA_2.jpg" data-lightbox="AA" data-title="AA - Back View"></a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/AA_3.jpg" data-lightbox="AA" data-title="AA - Back View"></a>
-              <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/AA_4.jpg" data-lightbox="AA" data-title="AA - Back View"></a>
-            </div>
-            <p>An extinct type of oyster that lived in warm, shallow seas in large colonies, these common fossils are often found in Jurassic limestone formations throughout the UK. 
-              Folklore suggests the name comes from the belief that the devil clipped his own toenails, and these fossils were what fell to earth.</p>
+          <p></p>
+        </div>
+        <div class="find">
+          <h2>Gryphaea Shell (Devil's Toenail)</h2>
+          <div class="thumbnails">
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/AA_1.jpg" data-lightbox="AA" data-title="Front View">
+              <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/AA_1.jpg" alt="AA - Front View">
+            </a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/AA_2.jpg" data-lightbox="AA" data-title="AA - Back View"></a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/AA_3.jpg" data-lightbox="AA" data-title="AA - Back View"></a>
+            <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Dig_Weekend/AA_4.jpg" data-lightbox="AA" data-title="AA - Back View"></a>
           </div>
+          <p>An extinct type of oyster that lived in warm, shallow seas in large colonies, these common fossils are often found in Jurassic limestone formations throughout the UK.
+            Folklore suggests the name comes from the belief that the devil clipped his own toenails, and these fossils were what fell to earth.</p>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -782,7 +784,7 @@
       function toggleDropdown(contentId, chevronId) {
         const content = document.getElementById(contentId);
         const chevron = document.getElementById(chevronId);
-    
+
         content.classList.toggle("open");
         chevron.classList.toggle("rotate");
       }
