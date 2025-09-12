@@ -16,10 +16,8 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=PT+Sans&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=PT+Sans&display=swap" rel="stylesheet">
-
   <style>
+    /* ===== BASE STYLES ===== */
     body {
       font-family: 'Merriweather', serif;
       font-size: 11pt;
@@ -42,6 +40,7 @@
       text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
       text-align: center;
       padding: 20px;
+      position: relative;
     }
 
     .header h1 {
@@ -80,6 +79,29 @@
       font-weight: normal;
     }
 
+    .find h4 {
+      margin: 10px 0;
+      color: #7f1146;
+    }
+    
+    .national-record-btn {
+      display: inline-block;
+      background-color: #7f1146;
+      color: white;
+      padding: 8px 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: normal;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .national-record-btn:hover {
+      background-color: #4a2d7a;
+    }
+
     a h4 {
     color: #808588;
     text-decoration: none;
@@ -109,6 +131,12 @@
       width: 300px;
       height: auto;
       cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .thumbnails img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
     .dropdown-box {
@@ -205,10 +233,113 @@
     }
 
 
+    /* ===== BACK TO TOP BUTTON ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #7f1146;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background-color: #5d0f35;
+      transform: translateY(-3px);
+    }
+    
+    /* Smooth scrolling for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* ===== MOBILE MENU ===== */
+    .mobile-menu-btn {
+      display: none;
+      background: #7f1146;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    
+    .mobile-menu-btn .menu-icon {
+      float: right;
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-menu-btn.active .menu-icon {
+      transform: rotate(90deg);
+    }
+    
+    /* ===== IMPROVED TOUCH TARGETS ===== */
+    .dropdown-btn {
+      padding: 28px 20px;
+      min-height: auto;
+    }
+    
+    .sub-dropdown-btn {
+      padding: 21px 15px;
+      min-height: auto;
+    }
+    
+    .national-record-btn {
+      min-height: 44px;
+      padding: 12px 20px;
+    }
+    
+    .thumbnails a {
+      display: inline-block;
+      padding: 5px; /* Add padding around thumbnails for better touch */
+    }
+    
+    /* ===== RESPONSIVE ADJUSTMENTS ===== */
     @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+      
       .dropdown-box {
-        grid-template-columns: 1fr; /* single column */
-        width: 95%; /* a bit wider for small screens */
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 0 5px;
+      }
+      
+      .dropdown-btn, 
+      .sub-dropdown-btn {
+        width: 100%;
+        margin: 5px 0;
+        padding: 15px;
+      }
+      
+      .thumbnails img {
+        width: 100%;
+        max-width: 100%;
+        margin: 5px 0;
+      }
+      
+      .find {
+        margin-bottom: 20px;
       }
 
       body {
@@ -261,6 +392,9 @@
   <div class="header">
     <h1>The gallery</h1>
   </div>
+  
+  <div class="content">
+    <button class="mobile-menu-btn">Menu <span class="menu-icon">☰</span></button>
 
   <div class="text-block">
     <h3>Welcome</h3>
@@ -287,7 +421,7 @@
         <h2>Copper Fragments</h2>
         <div class="thumbnails">
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_1.jpg" data-lightbox="AJ05" data-title="Front View">
-            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_1.jpg" alt="AJ05 - Front View">
+            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_1.jpg" alt="AJ05 - Front View" loading="lazy">
           </a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_2.jpg" data-lightbox="AJ05" data-title="AJ05 - Back View"></a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ05/AJ05_3.jpg" data-lightbox="AJ05" data-title="AJ05 - Front Light View"></a>
@@ -300,7 +434,7 @@
         <h2>Brooch</h2>
         <div class="thumbnails">
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ09/AJ09_1.jpg" data-lightbox="AJ09" data-title="Front View">
-            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ09/AJ09_1.jpg" alt="AJ09 - Front">
+            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ09/AJ09_1.jpg" alt="AJ09 - Front" loading="lazy">
           </a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ09/AJ09_2.jpg" data-lightbox="AJ09" data-title="AJ09 - Back View"></a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/AJ09/AJ09_3.jpg" data-lightbox="AJ09" data-title="AJ09 - Front Zoom View"></a>
@@ -312,7 +446,7 @@
         <h2>Bullet Casings</h2>
         <div class="thumbnails">
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Bullets/Bullets_1.jpg" data-lightbox="Bullets" data-title="Four Casings">
-            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Bullets/Bullets_1.jpg" alt="Bullets - Four Casings">
+            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Bullets/Bullets_1.jpg" alt="Bullets - Four Casings" loading="lazy">
           </a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Bullets/Bullets_2.jpg" data-lightbox="Bullets" data-title="Bullets - Four Casings"></a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/Bullets/Bullets_3.jpg" data-lightbox="Bullets" data-title="Bullets - Casings"></a>
@@ -326,7 +460,7 @@
         <h2>Cartwheel Penny</h2>
         <div class="thumbnails">
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG03/DG03_1.jpg" data-lightbox="DG03" data-title="Front View">
-            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG03/DG03_1.jpg" alt="DG03 - Front">
+            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG03/DG03_1.jpg" alt="DG03 - Front" loading="lazy">
           </a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG03/DG03_2.jpg" data-lightbox="DG03" data-title="DG03 - Back View"></a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG03/DG03_3.jpg" data-lightbox="DG03" data-title="DG03 - Front Light View"></a>
@@ -339,7 +473,7 @@
         <h2>Horseshoe Badge</h2>
         <div class="thumbnails">
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/PC02/PC02_1.jpg" data-lightbox="PC02" data-title="Front View">
-            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/PC02/PC02_1.jpg" alt="PC02 - Front View">
+            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/PC02/PC02_1.jpg" alt="PC02 - Front View" loading="lazy">
           </a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/PC02/PC02_2.jpg" data-lightbox="PC02" data-title="PC02 - Back View"></a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/PC02/PC02_3.jpg" data-lightbox="PC02" data-title="PC02 - Front Close Up View"></a>
@@ -348,12 +482,12 @@
         <p>Here we have another badge, this one taking the shape of a horseshoe, which may contain some lettering on the top portion of the curve.
         It also appears metallic, probably pressed iron, and its purpose is likely decorative. It originates from the late 19th or early 20th century.</p>
       </div>
-      <div class="find">
+        <div class="find">
         <h2>Lace Chape</h2>
-          <a href="https://finds.org.uk/database/artefacts/record/id/1235088" ><h4>This find was recorded at a national level, click to find out more.</h4></a>
+          <a href="https://finds.org.uk/database/artefacts/record/id/1235088" class="national-record-btn">This find was recorded at a national level, click to find out more.</a>
         <div class="thumbnails">
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/RS6/RS6_1.jpg" data-lightbox="RS6" data-title="Front Light View">
-            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/RS6/RS6_1.jpg" alt="RS6 - Front Light View">
+            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/RS6/RS6_1.jpg" alt="RS6 - Front Light View" loading="lazy">
           </a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/RS6/RS6_2.jpg" data-lightbox="RS6" data-title="RS6 - Back Light View"></a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/RS6/RS6_3.jpg" data-lightbox="RS6" data-title="RS6 - Front View"></a>
@@ -366,7 +500,7 @@
         <h2>Halfpenny</h2>
         <div class="thumbnails">
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/PS05/PS05_1.jpg" data-lightbox="PS05" data-title="Front View">
-            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/PS05/PS05_1.jpg" alt="PS05 - Front View">
+            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/PS05/PS05_1.jpg" alt="PS05 - Front View" loading="lazy">
           </a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/PS05/PS05_2.jpg" data-lightbox="PS05" data-title="PS05 - Back View"></a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/PS05/PS05_3.jpg" data-lightbox="PS05" data-title="PS05 - Front Close Up View"></a>
@@ -428,7 +562,7 @@
         <h2>George V Penny</h2>
         <div class="thumbnails">
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG10/DG10_1.jpg" data-lightbox="DG10" data-title="Back View">
-            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG10/DG10_1.jpg" alt="DG10 - Back View">
+            <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG10/DG10_1.jpg" alt="DG10 - Back View" loading="lazy">
           </a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG10/DG10_2.jpg" data-lightbox="DG10" data-title="DG10 - Front View"></a>
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG10/DG10_3.jpg" data-lightbox="DG10" data-title="DG10 - Front Close Up View"></a>
@@ -452,7 +586,7 @@
       </div>
       <div class="find">
         <h2>Scallop Palm Guard</h2>
-          <a href="https://finds.org.uk/database/artefacts/record/id/1235086" ><h4>This find was recorded at a national level, click to find out more.</h4></a>
+          <a href="https://finds.org.uk/database/artefacts/record/id/1235086" class="national-record-btn">This find was recorded at a national level, click to find out more.</a>
         <div class="thumbnails">
           <a href="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG12/DG12_1.jpg" data-lightbox="DG12" data-title="Front View">
             <img src="https://raw.githubusercontent.com/Benedek09/Archaeology/main/images/DG12/DG12_1.jpg" alt="DG12 - Front View">
@@ -907,6 +1041,52 @@
       }
     </script>
 
-
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+  
+  <script>
+    // Back to Top Button
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const dropdowns = document.querySelectorAll('.dropdown-btn');
+    
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        dropdowns.forEach(dropdown => {
+          dropdown.style.display = dropdown.style.display === 'none' ? 'flex' : 'none';
+        });
+        mobileMenuBtn.classList.toggle('active');
+      });
+    }
+    
+    // Initialize mobile menu state
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth <= 768) {
+        dropdowns.forEach(dropdown => {
+          dropdown.style.display = 'none';
+        });
+        
+        // Create mobile menu button if it doesn't exist
+        if (!document.querySelector('.mobile-menu-btn')) {
+          const menuBtn = document.createElement('button');
+          menuBtn.className = 'mobile-menu-btn';
+          menuBtn.innerHTML = 'Menu <span class="menu-icon">☰</span>';
+          document.querySelector('.content').prepend(menuBtn);
+        }
+      }
+    });
+  </script>
 </body>
 </html>
+
